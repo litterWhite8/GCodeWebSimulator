@@ -1,20 +1,48 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import {
+  NConfigProvider,
+  NMessageProvider,
+  NLayout,
+  NLayoutSider,
+  NLayoutHeader,
+  NLayoutContent,
+  NSpace,
+  NMenu,
+  NButton,
+  NUpload,
+  NIcon,
+  NH2,
+  NDialogProvider
+} from 'naive-ui'
+import Layout from './components/Layout.vue'
+import Scene3D from './components/Scene3D.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <n-config-provider>
+    <n-message-provider>
+      <n-dialog-provider>
+        <Layout>
+        </Layout>
+      </n-dialog-provider>
+    </n-message-provider>
+  </n-config-provider>
 </template>
 
 <style scoped>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
